@@ -1,0 +1,84 @@
+// color scheme: flatuicolors.com
+
+@keyframes orbit
+  from
+    -webkit-transform rotateZ(0deg)
+  to
+    -webkit-transform rotateZ(360deg)
+
+*
+*::before
+*::after
+  -webkit-box-sizing border-box
+
+body
+  overflow hidden
+  background #2c3e50
+
+.galaxy
+  width 600px
+  height 600px
+  position absolute
+  top 46.5%
+  left 45%
+  margin -300px 0 0 -300px
+  -webkit-transform perspective(1000px) rotateX(60deg) rotateY(-50deg)
+
+.battery
+  position absolute
+  top 50%
+  left 50%
+  -webkit-transform translate(-50%, -50%)
+  border-radius 50%
+  background #f1c40f
+
+galaxy-item($orbit-diameter, $orbit-tint, $orbit-duration, $planet-diameter, $planet-tint)
+  border 5px solid $orbit-tint
+  border-radius 50%
+  position absolute
+  top 0
+  left 0
+  width $orbit-diameter
+  height $orbit-diameter
+  margin ((100% - $orbit-diameter) / 2)
+  display inline-block
+
+  if $orbit-duration
+    -webkit-animation orbit $orbit-duration linear infinite
+
+  &::before
+    content ""
+    display block
+    background $planet-tint
+    border-radius 50%
+    margin -(($planet-diameter + 16px) / 2) auto 0
+    width $planet-diameter + 12px
+    height $planet-diameter + 12px
+
+.galaxy > .month
+  galaxy-item 100% #e74c3c 0 20px #fff
+
+.galaxy > .day
+  galaxy-item 90% #e67e22 0 8px #fff
+
+.galaxy > .weekday
+  galaxy-item 80% #f1c40f 0 10px #fff
+
+.galaxy > .hours
+  galaxy-item 70% #2ecc71 0 16px #fff
+
+.galaxy > .minutes
+  galaxy-item 60% #3498db 3600s 12px #fff
+
+.galaxy > .seconds
+  galaxy-item 50% #9b59b6 60s 6px #fff
+
+.display
+  position absolute
+  top 50%
+  left 50%
+  -webkit-transform translate(-50%, -50%) rotate(-55deg)
+  display inline-block
+  color #fff
+  font 100 90px/290px "Helvetica Neue"
+  text-align center

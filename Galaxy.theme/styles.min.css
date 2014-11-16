@@ -1,0 +1,190 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+}
+body {
+  overflow: hidden;
+  background: #2c3e50;
+}
+.galaxy {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: 46.5%;
+  left: 45%;
+  margin: -300px 0 0 -300px;
+  -webkit-transform: perspective(1000px) rotateX(60deg) rotateY(-50deg);
+}
+.battery {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #f1c40f;
+}
+.galaxy > .month {
+  border: 5px solid #e74c3c;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0%;
+  display: inline-block;
+}
+.galaxy > .month::before {
+  content: "";
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  margin: -18px auto 0;
+  width: 32px;
+  height: 32px;
+}
+.galaxy > .day {
+  border: 5px solid #e67e22;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+  display: inline-block;
+}
+.galaxy > .day::before {
+  content: "";
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  margin: -12px auto 0;
+  width: 20px;
+  height: 20px;
+}
+.galaxy > .weekday {
+  border: 5px solid #f1c40f;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 80%;
+  margin: 10%;
+  display: inline-block;
+}
+.galaxy > .weekday::before {
+  content: "";
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  margin: -13px auto 0;
+  width: 22px;
+  height: 22px;
+}
+.galaxy > .hours {
+  border: 5px solid #2ecc71;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 70%;
+  margin: 15%;
+  display: inline-block;
+}
+.galaxy > .hours::before {
+  content: "";
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  margin: -16px auto 0;
+  width: 28px;
+  height: 28px;
+}
+.galaxy > .minutes {
+  border: 5px solid #3498db;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 60%;
+  margin: 20%;
+  display: inline-block;
+  -webkit-animation: orbit 3600s linear infinite;
+}
+.galaxy > .minutes::before {
+  content: "";
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  margin: -14px auto 0;
+  width: 24px;
+  height: 24px;
+}
+.galaxy > .seconds {
+  border: 5px solid #9b59b6;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  margin: 25%;
+  display: inline-block;
+  -webkit-animation: orbit 60s linear infinite;
+}
+.galaxy > .seconds::before {
+  content: "";
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  margin: -11px auto 0;
+  width: 18px;
+  height: 18px;
+}
+.display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-55deg);
+  display: inline-block;
+  color: #fff;
+  font: 100 90px/290px "Helvetica Neue";
+  text-align: center;
+}
+@-moz-keyframes orbit {
+  from {
+    -webkit-transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+@-webkit-keyframes orbit {
+  from {
+    -webkit-transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+@-o-keyframes orbit {
+  from {
+    -webkit-transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+@keyframes orbit {
+  from {
+    -webkit-transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
